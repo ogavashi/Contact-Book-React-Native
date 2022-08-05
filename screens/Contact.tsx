@@ -91,7 +91,12 @@ const Contact: FC<Props<"Contact">> = ({ route, navigation }) => {
   };
 
   useEffect(() => {
-    navigation.setOptions({ title: contact.name });
+    navigation.setOptions({
+      title: contact.name,
+      headerRight: () => (
+        <Button onPress={() => navigation.navigate("Update Contact", { contact })} title="Edit" />
+      ),
+    });
   });
 
   return (

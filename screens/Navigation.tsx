@@ -4,6 +4,7 @@ import Contacts from "./Contacts";
 import Contact from "./Contact";
 import AddContact from "./AddContact";
 import { IContact } from "../types";
+import UpdateContact from "./UpdateContact";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,9 @@ export type RootStackParamList = {
     contact: IContact;
   };
   "Add Contact": undefined;
+  "Update Contact": {
+    contact: IContact;
+  };
 };
 
 export const Navigation = () => {
@@ -22,6 +26,7 @@ export const Navigation = () => {
         <Stack.Screen name="Contacts" component={Contacts} />
         <Stack.Screen name="Contact" component={Contact} />
         <Stack.Screen name="Add Contact" component={AddContact} />
+        <Stack.Screen name="Update Contact" component={UpdateContact} />
       </Stack.Navigator>
     </NavigationContainer>
   );
